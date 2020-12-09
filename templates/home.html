@@ -4,14 +4,76 @@
     <title>App de Rutas</title>
     <!-- Bootstrap 4 Stylesheet Support -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/style.css" />
 </head>
 
 <body>
-
+    <div class="container-fluid h-100">
+        <div class="row">
+            <div class="col-0 col-xs-2"></div>
+            <div class="col-12 col-xs-8">
+                <div class="container d-flex flex-column justify-content-center align-items-center" style="height: 100vh;">
+                    <h3>Zapatos al Precio - Planificador de ruta</h3>
+                    <h5>Ingrese datos:</h5>
+                    <form method="post" enctype="multipart/form-data" action="/mapa">
+                        <div class="form-group">
+                            <label for="colina">Colonia:</label>
+                            <input type="file" class="form-control" id="colonia" aria-describedby="coloniaHelp" name="colonia" required/>
+                            <small id="coloniaHelp" class="form-text text-muted">Ingrese archivo de imagen de la colonia</small>
+                        </div>
+                        <hr />
+                        <div class="form-group">
+                            <div class="form-row">
+                                <div class="col-8">
+                                    <label for="vendedorUno">Vendedor Uno:</label>
+                                    <input type="text" class="form-control" id="vendedorUno" name="vendedorUno" aria-describedby="vendedorUnoHelp" placeholder="..." required/>
+                                    <small id="vendedorUnoHelp" class="form-text text-muted">Ingrese apellido, nombre del primer vendedor</small>
+                                </div>
+                                <div class="col-4">
+                                    <label for="vendedorUnoColor">Color Vendedor Uno:</label>
+                                    <select class="form-control" id="vendedorUnoColor" name="vendedorUnoColor" aria-describedby="vendedorUnoColorHelp" onchange="updateUI()">
+                                        <option value="255,0,0" selected>Rojo</option>
+                                        <option value="255,255,102">Amarillo</option>
+                                        <option value="0,0,255">Azul</option>
+                                        <option value="144,119,202">Morado</option>
+                                    </select>
+                                    <small id="vendedorUnoColorHelp" class="form-text text-muted">Seleccione color para indicar primera ruta</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-row">
+                                <div class="col-8">
+                                    <label for="vendedorUno">Vendedor Dos:</label>
+                                    <input type="text" class="form-control" id="vendedorDos" name="vendedorDos" aria-describedby="vendedorDosHelp" placeholder="..." required/>
+                                    <small id="vendedorDosHelp" class="form-text text-muted">Ingrese apellido, nombre del segundo vendedor</small>
+                                </div>
+                                <div class="col-4">
+                                    <label for="vendedorDosColor">Color Vendedor Dos:</label>
+                                    <select class="form-control" id="vendedorDosColor" name="vendedorDosColor" aria-describedby="vendedorDosColorHelp" onchange="updateUI()">
+                                        <option value="255,0,0">Rojo</option>
+                                        <option value="255,255,102" selected>Amarillo</option>
+                                        <option value="0,0,255">Azul</option>
+                                        <option value="144,119,202">Morado</option>
+                                    </select>
+                                    <small id="vendedorDosColorHelp" class="form-text text-muted">Seleccione color para indicar segunda ruta</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-block btn-primary">Aceptar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-0 col-xs-2"></div>
+        </div>
+    </div>
     <!-- Bootstrap 4 JS Support; jQuery 3.2.1 -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="static/script.js"></script>
 </body>
 
 </html>

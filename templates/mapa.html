@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>App de Rutas</title>
+    <!-- Bootstrap 4 Stylesheet Support -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/style.css" />
+</head>
+<body>
+    <div class="container-fluid h-100">
+        <div class="row">
+            <div class="col-0 col-xs-2"></div>
+            <div class="col-12 col-xs-8">
+                <div class="container d-flex flex-column justify-content-center align-items-center" style="height: 100vh;">
+                    <p><a href="/">< Volver</a></p>
+                    <div class="contaier-fluid d-flex flex-column justify-content-center align-items-center w-100" id="mapWrapper">
+                        <h3>Zapatos al Precio - Planificador de ruta</h3>
+                        <h5>Ruta propuesta:</h5>
+                        <div class="d-flex justify-content-around mt-2" style="width: 50%;">
+                            <p>{{ vendedorUno }} - <span style="background-color: rgb({{ colorUno }}); color: rgb({{ colorUno }});">&nbsp;&nbsp;&nbsp;</span></p>
+                            <p>{{ vendedorDos }} - <span style="background-color: rgb({{ colorDos }}); color: rgb({{ colorDos }});">&nbsp;&nbsp;&nbsp;</span></p>
+                        </div>
+                        <img src="static/maps/{{ map }}" />
+                    </div>
+                    <button class="btn btn-primary" style="width: 50%;" onclick="download()">Preparar</button>
+                    <div class="contaier-fluid d-flex justify-content-center align-items-center w-100 mt-2" id="downloadWrapper"></div>
+                </div>
+            </div>
+            <div class="col-0 col-xs-2"></div>
+        </div>
+    </div>
+    <!-- Bootstrap 4 JS Support; jQuery 3.2.1 -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="static/html2canvas.js"></script>
+    <script src="static/script.js"></script>
+</body>
+
+</html>
